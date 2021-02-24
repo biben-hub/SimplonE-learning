@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- {% block head %} {% endblock %} -->
-    <link rel="stylesheet" href="./css/main.css">
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}"> -->
+    <!-- <link rel="stylesheet" href="./css/main.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
     <title>CloudFlix - Home</title>
 </head>
 
@@ -21,7 +21,7 @@
 
         <div class="nav-right">
             <input type="text" placeholder="search for a video">
-           <a href="./html/addvideo.html"> <h2 class="h2-nav"> + ADD VIDEOS</h2></a>
+           <a href="./addvideo"> <h2 class="h2-nav"> + ADD VIDEOS</h2></a>
         </div>
     </nav>
 
