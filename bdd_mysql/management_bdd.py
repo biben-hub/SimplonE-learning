@@ -4,7 +4,7 @@ import mysql.connector
 #create database e_learning;
 class ManagementBdd:
     def __init__(self):
-        #, dbName, user, passwd, host
+        
         #"Établissement de la connexion - Création du curseur"
         try:
             self.cnx = mysql.connector.connect(user='cary', password='cordoba#1234AA', host='localhost', database='e_learning', use_unicode=True, charset='utf8')
@@ -24,10 +24,10 @@ class ManagementBdd:
 
             var_cursor = self.cnx.cursor()
             
-            self.requete=f'CREATE TABLE videos (video_id INTEGER AUTO_INCREMENT PRIMARY KEY, titre VARCHAR(200) NOT NULL, author VARCHAR(250), lien TEXT NOT NULL, anne_video VARCHAR(4), description TEXT, categorie VARCHAR(200)) '
+            self.requete=f'CREATE TABLE IF NOT EXISTS videos (video_id INTEGER AUTO_INCREMENT PRIMARY KEY, titre VARCHAR(250) NOT NULL, author VARCHAR(250), lien TEXT NOT NULL, anne_video VARCHAR(4), description TEXT, categorie VARCHAR(200)) '
 
             var_cursor.execute(self.requete)
-
+            print('creation reussi!!!')
             return 1
 
         except Exception as err:
@@ -36,16 +36,18 @@ class ManagementBdd:
                 % (self.requete, err))
             return 0         
     
-    """  def insert_donnes(self, donnes):
+    """ def insert_donnes(self, donnes):
+        #donnes sera un dictionnare json envoyé pour le flask
         try:
             mon_cursor = self.cnx.cursor()
             #print(donnes)           
 
             #on cree la requete d'insertion
-            sql_insert = ('INSERT INTO videos(titre, description,date_offre,salaire,localisation,id_entreprise, date_current, lien) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)')
+            #['https://www.youtube.com/watch?v=m6chqKlhpPo','30 Days of Python - Day 15 - Automated Video Processing with Moviepy - Python TUTORIAL','autheur 1', 2020, 'description', 'Python']
+            sql_insert = ('INSERT INTO videos(titre, author,lien,anne_video,description,categorie) VALUES(%s,%s,%s,%s,%s,%s)')
             
             #on execute le methode pour inserer les donnes sur la BDD bd_scrapping)
-            mon_cursor.executemany(sql_insert, donnes) #execute le curseur avec la methode executemany transmit la requete
+            mon_cursor.execute(sql_insert, donnes) #execute le curseur avec la methode executemany transmit la requete
             
             self.cnx.commit() #valide la transaction
                 
@@ -55,5 +57,11 @@ class ManagementBdd:
         except mysql.connector.Error as err:
             print("Something went wrong, un erreur se produit : {}".format(err)) """
 
-
     
+
+ 
+
+
+
+
+  
