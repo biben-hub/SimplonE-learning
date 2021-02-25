@@ -19,12 +19,31 @@ class ManagementBdd:
     def message(self):
         print('hola')
     
+    def create_database(self):
+        try:       
+
+            var_cursor = self.cnx.cursor()
+            
+            self.requete=f'CREATE DATABASE IF NOT EXISTS e_learning'
+
+            var_cursor.execute(self.requete)
+            print('creation BDD reussi!!!')
+            return 1
+
+        except Exception as err:
+            # afficher la requête et le message d'erreur système :
+            print ("Requête SQL incorrecte :\n%s\nErreur détectée :\n%s"\
+                % (self.requete, err))
+            return 0   
+    
     def create_table_videos(self):
         try:       
 
             var_cursor = self.cnx.cursor()
             
-            self.requete=f'CREATE TABLE  IF NOT EXISTS videos (video_id INTEGER AUTO_INCREMENT PRIMARY KEY, titre VARCHAR(250) NOT NULL, author VARCHAR(250), lien TEXT NOT NULL, anne_video VARCHAR(4), description TEXT, categorie VARCHAR(200)) '
+
+            self.requete=f'CREATE TABLE IF NOT EXISTS videos (video_id INTEGER AUTO_INCREMENT PRIMARY KEY, titre VARCHAR(250) NOT NULL, author VARCHAR(250), lien TEXT NOT NULL, anne_video VARCHAR(4), description TEXT, categorie VARCHAR(200)) '
+
 
             var_cursor.execute(self.requete)
             print('creation reussi!!!')
