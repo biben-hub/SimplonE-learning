@@ -8,14 +8,9 @@ mybdd= mysql.connector.connect(user='cary', password='cordoba#1234AA', host='loc
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-
-
-@app.route('/jinja')
-def jinja():
     cursor = mybdd.cursor()
     sql = "SELECT * FROM videos"
     cursor.execute(sql)
