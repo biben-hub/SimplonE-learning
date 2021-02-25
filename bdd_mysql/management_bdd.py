@@ -36,8 +36,9 @@ class ManagementBdd:
                 % (self.requete, err))
             return 0         
     
-    """ def insert_donnes(self, donnes):
+    def insert_donnes(self, donnes):
         #donnes sera un dictionnare json envoyé pour le flask
+        #print(donnes, type(donnes))#<class 'list'>
         try:
             mon_cursor = self.cnx.cursor()
             #print(donnes)           
@@ -55,7 +56,7 @@ class ManagementBdd:
         
 
         except mysql.connector.Error as err:
-            print("Something went wrong, un erreur se produit : {}".format(err)) """
+            print("Something went wrong, un erreur se produit : {}".format(err))
 
     
 
