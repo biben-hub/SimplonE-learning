@@ -1,5 +1,10 @@
 from flask import Flask, render_template
-from flask import redirect
+from flask import redirect, jsonify
+import mysql.connector
+
+
+mybdd= mysql.connector.connect(user='cary', password='cordoba#1234AA', host='localhost', database='e_learning', use_unicode=True, charset='utf8')
+
 
 app = Flask(__name__)
 
@@ -12,6 +17,22 @@ def index():
 @app.route('/addvideo')
 def add_video():
     return render_template('addvideo.html')   
+
+
+
+@app.route('/apivideo',methods=['GET'])
+def api_video():
+    dict_videos=[]
+    cursor = mybdd.cursor(dictionary=True)
+    print('Curseur --->',cursor)
+    sql='select * from videos'
+    cursor.execute(sql)
+
+    for i in cursor:
+        dict_videos.append(i)
+
+    resp = jsonify(dict_videos)
+    return resp
 
 if __name__ == '__main__':
     app.run(debug=True)

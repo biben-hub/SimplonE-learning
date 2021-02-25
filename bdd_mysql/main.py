@@ -12,7 +12,7 @@ def main():
     connect_bdd.message()
     connect_bdd.create_table_videos()
     connect_bdd.insert_donnes(liste_videos)
-    print('OK')
+    print('Fin du Script)
 
 
 if __name__ == "__main__":
