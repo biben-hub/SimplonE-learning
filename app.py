@@ -14,6 +14,15 @@ def index():
 
 
 
+@app.route('/jinja')
+def jinja():
+    cursor = mybdd.cursor()
+    sql = "SELECT * FROM videos"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return render_template('index.html', results = results, len=len(results))
+
+
 @app.route('/addvideo')
 def add_video():
     return render_template('addvideo.html')   
