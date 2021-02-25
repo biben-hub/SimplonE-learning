@@ -1,7 +1,7 @@
 import mysql.connector
 import json
 
-from adlane_management_bdd import *
+from management_bdd import *
 
 def main():
     print('Pret!!')
