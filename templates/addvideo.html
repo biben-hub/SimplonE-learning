@@ -1,41 +1,44 @@
+{% extends 'base.html' %}
+{% block head %}
+
+<!-- <link rel="stylesheet" href="./../css/main.css"> -->
+<title> Add a vid</title>
+
+{% endblock %}
 
 
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
-    <!-- <link rel="stylesheet" href="./../css/main.css"> -->
-    <title> Add a vid</title>
+
+
+{% block body %} 
 
 
 
 
+  <nav id="nav-id" class="nav-class"></nav>
+
+  <h1 class="add-vid-h1">Add a video below : </h1>
+
+  <div class="inputs-bdd">
+
+    <label for="add-vid">Insert the URL :</label>
+    <input type="text" name="add-vid" id="add-vid">
+
+    <label for="">Choose the category :</label>
+    <input type="text" name="" id="">
+
+    <label for="">Insert the title :</label>
+    <input type="text" name="" id="">
+
+    <label for="">Insert author's name :</label>
+    <input type="text" name="" id="">
 
 
- 
-  <body>
-    <nav id="nav-id" class="nav-class"></nav>
+    <label for="">Insert description : </label>
+    <input type="text" name="" id="">
 
-    <h1 class="add-vid-h1">Add a video below : </h1>
+    <label for="">Insert date (MM/YY)</label>
+    <input type="text" name="" id="">
 
-    <div class="inputs-bdd">
+  </div>
 
-        <label for="add-vid">Insert the URL :</label>
-        <input type="text" name="add-vid" id="add-vid">
-
-        <label for="">Choose the category :</label>
-        <input type="text" name="" id="">
-
-        <label for="">Insert the title :</label>
-        <input type="text" name="" id="">
-
-        <label for="">Insert author's name :</label>
-        <input type="text" name="" id="">
-
-
-        <label for="">Insert description : </label>
-        <input type="text" name="" id="">
-
-        <label for="">Insert date (MM/YY)</label>
-        <input type="text" name="" id="">
-
-    </div>
-   
-  </body>
+  {% endblock %}

@@ -51,8 +51,10 @@ class ManagementBdd:
             logging.info("class ManagementBdd, methode: create_table_videos - Start")
             var_cursor = self.cnx.cursor()
             
+
             self.requete=f'CREATE TABLE IF NOT EXISTS videos (video_id INTEGER AUTO_INCREMENT PRIMARY KEY, titre VARCHAR(250) NOT NULL, author VARCHAR(250), lien TEXT NOT NULL, anne_video VARCHAR(4), description TEXT, categorie VARCHAR(200)) '
             #logging.info("create_table_videos, requete : "+self.requete)
+
 
             var_cursor.execute(self.requete)
             print('creation reussi!!!')
