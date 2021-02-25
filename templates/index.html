@@ -1,59 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- {% block head %} {% endblock %} -->
-    <!-- <link rel="stylesheet" href="./css/main.css"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
-    <title>CloudFlix - Home</title>
-</head>
-
-<body>
-    <!-- {% block body %}  -->
-    <nav id="nav-id" class="nav-class">
-        <!-- logo a gauche -->
-        <div class="logo-nav-left">
-            <h1 class="logo-h1">CloudFlix</h1>
-        </div>
-
-        <div class="nav-right">
-            <input type="text" placeholder="search for a video">
-           <a href="/addvideo"> <h2 class="h2-nav"> + ADD VIDEOS</h2></a>
-        </div>
-    </nav>
-
-    <!-- {% endblock %} -->
-    <section class="main" id="main">
-        <!-- block selection de catégorie -->
-        <div class="bloc-categ">
-            <label for="select-main">Select category :
-                <select id="select-main" class="select-main-class">
-                    <option value="">-- Please select a category --</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Python">Python</option>
-                </select>
-            </label>
-        </div>
-        <!-- premier carousel : python -->
-        <h2 class="python-vids">PYTHON VIDEOS</h2>
-        <iframe src="" frameborder="0"></iframe>
-
-      <div class="text-field-vid"></div.text-field-vid></div>
-        <!-- deuxieme carousel : js -->
-        <h2 class="js-vids">JAVASCRIPT VIDEOS</h2>
-        <iframe src="" frameborder="0"></iframe>
-        <p class="title" id="title-vid">Title</p>
-        <p class="author" id="author-vid">Author</p>
-        <p class="description" id="description-vid">Description</p>
+{% extends 'base.html' %}
+{% block head %}
+<!-- <link rel="stylesheet" href="./css/main.css"> -->
+<title>CloudFlix - Home</title>
+{% endblock %}
 
 
 
-    </section>
+{% block body %}
 
 
-</body>
+
+<nav id="nav-id" class="nav-class">
+    <!-- logo a gauche -->
+    <div class="logo-nav-left">
+        <h1 class="logo-h1">CloudFlix</h1>
+    </div>
+
+    <div class="nav-right">
+        <input type="text" placeholder="search for a video">
+        <a href="/addvideo">
+            <h2 class="h2-nav"> + ADD VIDEOS</h2>
+        </a>
+    </div>
+</nav>
+
+<section class="main" id="main">
+    <!-- block selection de catégorie -->
+    <div class="bloc-categ">
+        <label for="select-main">Select category :
+            <select id="select-main" class="select-main-class">
+                <option value="">-- Please select a category --</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+            </select>
+        </label>
+    </div>
+    <!-- premier carousel : python -->
+    <h2 class="python-vids">PYTHON VIDEOS</h2>
+
+    <div id="python-vids">
+
+        {% for i in range (0,len) %}
+        {% if results[i][6] == "Python" %}
+
+
+        <iframe width="560" height="315" src=" {{results[i][3]}} " frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen> </iframe>
+        <p class="title" id="title-vid">{{results[i][1]}}
+        </p>
+        <p class="author" id="author-vid">{{results[i][2]}}</p>
+        <p class="description" id="description-vid">{{results[i][5]}}</p>
+        <p>{{results[i][6]}}</p>
+        
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+
+    <iframe src="" frameborder="0"></iframe>
+
+    <div class="text-field-vid">
+        </div.text-field-vid>
+    </div>
+    <!-- deuxieme carousel : js -->
+    <h2 class="js-vids">JAVASCRIPT VIDEOS</h2>
+
+    {% for i in range (0,len) %}
+    {% if results[i][6] == "JavaScript" %}
+    {{results[i][3]}}
+
+    <iframe width="560" height="315" src=" {{results[i][3]}} " frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen> </iframe>
+    <p class="title" id="title-vid">{{results[i][1]}}
+    </p>
+    <p class="author" id="author-vid">{{results[i][2]}}</p>
+    <p class="description" id="description-vid">{{results[i][5]}}</p>
+    <p>{{results[i][6]}}</p>
+    
+    {% endif %}
+    {% endfor %}
+
+</section>
+
+{% endblock %}
+
 
 </html>
