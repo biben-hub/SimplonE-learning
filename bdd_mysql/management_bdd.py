@@ -41,7 +41,9 @@ class ManagementBdd:
 
             var_cursor = self.cnx.cursor()
             
+
             self.requete=f'CREATE TABLE IF NOT EXISTS videos (video_id INTEGER AUTO_INCREMENT PRIMARY KEY, titre VARCHAR(250) NOT NULL, author VARCHAR(250), lien TEXT NOT NULL, anne_video VARCHAR(4), description TEXT, categorie VARCHAR(200)) '
+
 
             var_cursor.execute(self.requete)
             print('creation reussi!!!')
