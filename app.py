@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from flask import redirect, jsonify
 import mysql.connector
 
@@ -20,7 +20,29 @@ def index():
 
 @app.route('/addvideo')
 def add_video():
-    return render_template('addvideo.html')   
+    return render_template('addvideo.html')
+    
+@app.route('/upload_video', methods = ["POST", "GET"])
+def upload_video():
+
+    if request.method == "POST":
+        lien           = request.form.get('lien')
+        categorie      = request.form.get('categorie')
+        titre          = request.form.get('titre')
+        author         = request.form.get('author')
+        description    = request.form.get('description')
+        anne_video     = request.form.get('anne_video')
+
+        cursor = mybdd.cursor()
+        cursor.execute('''INSERT INTO  videos
+                        (titre, author, lien, anne_video, description, categorie) 
+                        VALUES (%s, %s, %s, %s, %s, %s)''',
+                        (lien, categorie, titre, author, description, anne_video))
+
+        mybdd.commit()
+    return redirect('/')
+
+
 
 
 

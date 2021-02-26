@@ -19,25 +19,31 @@
   <h1 class="add-vid-h1">Add a video below : </h1>
 
   <div class="inputs-bdd">
+    
+    <form action = "{{url_for('upload_video')}}" method = 'post'>
 
-    <label for="add-vid">Insert the URL :</label>
-    <input type="text" name="add-vid" id="add-vid">
+      <label for="add-vid">Insert the URL :</label>
+      <input type="text" name="lien" id="add-vid">
 
-    <label for="">Choose the category :</label>
-    <input type="text" name="" id="">
+      <label for="">Choose the category :</label>
+      <input type="text" name="categorie" id="">
 
-    <label for="">Insert the title :</label>
-    <input type="text" name="" id="">
+      <label for="">Insert the title :</label>
+      <input type="text" name="titre" id="">
 
-    <label for="">Insert author's name :</label>
-    <input type="text" name="" id="">
+      <label for="">Insert author's name :</label>
+      <input type="text" name="author" id="">
 
 
-    <label for="">Insert description : </label>
-    <input type="text" name="" id="">
+      <label for="">Insert description : </label>
+      <input type="text" name="description" id="">
 
-    <label for="">Insert date (MM/YY)</label>
-    <input type="text" name="" id="">
+      <label for="">Insert date (MM/YY)</label>
+      <input type="text" name="anne_video" id="">
+
+      <button type="submit">Upload</button>
+
+  </form>
 
   </div>
 
