@@ -1,8 +1,8 @@
-
 body {
     background-color: black;
     color: white;
 }
+
 .nav-class {
     background-color: #E50914;
     width: 100%;
@@ -10,41 +10,69 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 1%;
-    
+
 
 }
 
-.nav-class a{
+.nav-class a {
     text-decoration: none;
     color: white;
 }
-.nav-right{
+
+.nav-right {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 0px 10px;
     grid-template-areas:
-      ". .";
-   
+        ". .";
+
 }
 
-.nav-right input{
+.nav-right input {
     border-radius: 10px;
     border: none;
     padding: 4%;
 }
 
-.main{
+.main {
     text-align: center;
 }
 
-.bloc-categ{
- 
+.bloc-categ {
+
     margin: 10%;
 
 }
 
-iframe{
-border: 1px solid white;
-margin: 5%;
+iframe {
+    border: 1px solid white;
+    margin: 5%;
+}
+
+.python-vids {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: ". . ."
+        ". . ."
+        ". . ."
+        ". . .";
+}
+
+.js-vids {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: ". . ."
+        ". . ."
+        ". . ."
+        ". . .";
+}
+
+.js-vids-title, .python-vids-title{
+    text-align: center;
+    margin: 100px 100px;
 }

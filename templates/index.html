@@ -36,22 +36,24 @@
         </label>
     </div>
     <!-- premier carousel : python -->
-    <h2 class="python-vids">PYTHON VIDEOS</h2>
+    <h2 class="python-vids-title">PYTHON VIDEOS</h2>
 
-    <div id="python-vids">
+    <div id="python-vids" class="python-vids">
 
         {% for i in range (0,len) %}
         {% if results[i][6] == "Python" %}
 
 
-        <iframe width="560" height="315" src=" {{results[i][3]}} " frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen> </iframe>
-        <p class="title" id="title-vid">{{results[i][1]}}
-        </p>
-        <p class="author" id="author-vid">{{results[i][2]}}</p>
-        <p class="description" id="description-vid">{{results[i][5]}}</p>
-        <p>{{results[i][6]}}</p>
+        <div class="grid-duplicate">
+            <iframe src=" {{results[i][3]}} " frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen> </iframe>
+            <p class="title" id="title-vid">{{results[i][1]}}
+            </p>
+            <p class="author" id="author-vid">{{results[i][2]}}</p>
+            <p class="description" id="description-vid">{{results[i][5]}}</p>
+            <p>{{results[i][6]}}</p>
+        </div>
 
         {% endif %}
         {% endfor %}
@@ -61,24 +63,29 @@
 
 
     <!-- deuxieme carousel : js -->
-    <h2 class="js-vids">JAVASCRIPT VIDEOS</h2>
+    <h2 class="js-vids-title">JAVASCRIPT VIDEOS</h2>
 
-    {% for i in range (0,len) %}
-    {% if results[i][6] == "JavaScript" %}
-    {{results[i][3]}}
 
-    <iframe width="560" height="315" src=" {{results[i][3]}} " frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen> </iframe>
-    <p class="title" id="title-vid">{{results[i][1]}}
-    </p>
-    <p class="author" id="author-vid">{{results[i][2]}}</p>
-    <p class="description" id="description-vid">{{results[i][5]}}</p>
-    <p>{{results[i][6]}}</p>
+    <div id="python-vids" class="js-vids">
 
-    {% endif %}
-    {% endfor %}
+        {% for i in range (0,len) %}
+        {% if results[i][6] == "JavaScript" %}
+      
 
+        <div class="grid-duplicate">
+            <iframe src=" {{results[i][3]}} " frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen> </iframe>
+            <p class="title" id="title-vid">{{results[i][1]}}
+            </p>
+            <p class="author" id="author-vid">{{results[i][2]}}</p>
+            <p class="description" id="description-vid">{{results[i][5]}}</p>
+            <p>{{results[i][6]}}</p>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+    </div>
 </section>
 
 {% endblock %}
