@@ -29,8 +29,10 @@ def main():
     print('Fin du Script')
 
     logging.info("Insertion des donnes - Start")
-    connect_bdd.insert_donnes(liste_videos)
+    """ count_insert = connect_bdd.insert_donnes(liste_videos)
+    print(count_insert) """
     logging.info("Insertion des donnes - End")
+
     print('Fin du Script')
     logging.info("Fin du Script")
 

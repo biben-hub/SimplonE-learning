@@ -19,3 +19,47 @@
 2021-02-25 15:47:05,643 INFO root MainThread : class ManagementBdd, methode: insert_donnes - End
 2021-02-25 15:47:05,644 INFO root MainThread : Insertion des donnes - End
 2021-02-25 15:47:05,646 INFO root MainThread : Fin du Script
+2021-02-26 10:43:37,707 INFO root MainThread : class ManagementBdd, methode: init - Start
+2021-02-26 10:43:37,831 INFO root MainThread : connection reussi à la BDD
+2021-02-26 10:43:37,832 INFO root MainThread : class ManagementBdd, methode: init - End
+2021-02-26 10:43:37,832 INFO root MainThread : class ManagementBdd, methode: create_database - Start
+2021-02-26 10:43:37,838 INFO root MainThread : creation BDD reussi!!!
+2021-02-26 10:43:37,838 INFO root MainThread : class ManagementBdd, methode: create_database, creation BDD reussi!!! - End
+2021-02-26 11:07:51,324 INFO root MainThread : class ManagementBdd, methode: init - Start
+2021-02-26 11:07:51,351 INFO root MainThread : connection reussi à la BDD
+2021-02-26 11:07:51,354 INFO root MainThread : class ManagementBdd, methode: init - End
+2021-02-26 11:07:51,355 INFO root MainThread : class ManagementBdd, methode: create_table_videos - Start
+2021-02-26 11:07:51,387 INFO root MainThread : creation reussi!!!
+2021-02-26 11:07:51,387 INFO root MainThread : class ManagementBdd, methode: create_table_videos - End
+2021-02-26 11:07:51,387 INFO root MainThread : class ManagementBdd, methode: init - Start
+2021-02-26 11:07:51,402 INFO root MainThread : connection reussi à la BDD
+2021-02-26 11:07:51,403 INFO root MainThread : class ManagementBdd, methode: init - End
+2021-02-26 11:07:51,403 INFO root MainThread : class ManagementBdd, methode: insert_donnes - Start
+2021-02-26 11:07:51,424 INFO root MainThread : 1 record inserted.
+
+2021-02-26 11:07:51,425 INFO root MainThread : class ManagementBdd, methode: insert_donnes - End
+2021-02-26 11:07:51,426 INFO root MainThread : class ManagementBdd, methode: init - Start
+2021-02-26 11:07:51,435 INFO root MainThread : connection reussi à la BDD
+2021-02-26 11:07:51,435 INFO root MainThread : class ManagementBdd, methode: init - End
+2021-02-26 11:07:51,435 INFO root MainThread : class ManagementBdd, methode: create_database - Start
+2021-02-26 11:07:51,437 INFO root MainThread : creation BDD reussi!!!
+2021-02-26 11:07:51,437 INFO root MainThread : class ManagementBdd, methode: create_database, creation BDD reussi!!! - End
+2021-02-26 11:09:18,546 INFO root MainThread : class ManagementBdd, methode: init - Start
+2021-02-26 11:09:18,555 INFO root MainThread : connection reussi à la BDD
+2021-02-26 11:09:18,557 INFO root MainThread : class ManagementBdd, methode: init - End
+2021-02-26 11:09:18,560 INFO root MainThread : class ManagementBdd, methode: create_table_videos - Start
+2021-02-26 11:09:18,563 INFO root MainThread : creation reussi!!!
+2021-02-26 11:09:18,563 INFO root MainThread : class ManagementBdd, methode: create_table_videos - End
+2021-02-26 11:09:18,566 INFO root MainThread : class ManagementBdd, methode: init - Start
+2021-02-26 11:09:18,575 INFO root MainThread : connection reussi à la BDD
+2021-02-26 11:09:18,577 INFO root MainThread : class ManagementBdd, methode: init - End
+2021-02-26 11:09:18,578 INFO root MainThread : class ManagementBdd, methode: insert_donnes - Start
+2021-02-26 11:09:18,595 INFO root MainThread : 1 record inserted.
+
+2021-02-26 11:09:18,599 INFO root MainThread : class ManagementBdd, methode: insert_donnes - End
+2021-02-26 11:09:18,601 INFO root MainThread : class ManagementBdd, methode: init - Start
+2021-02-26 11:09:18,613 INFO root MainThread : connection reussi à la BDD
+2021-02-26 11:09:18,613 INFO root MainThread : class ManagementBdd, methode: init - End
+2021-02-26 11:09:18,613 INFO root MainThread : class ManagementBdd, methode: create_database - Start
+2021-02-26 11:09:18,616 INFO root MainThread : creation BDD reussi!!!
+2021-02-26 11:09:18,616 INFO root MainThread : class ManagementBdd, methode: create_database, creation BDD reussi!!! - End

@@ -49,12 +49,10 @@ class ManagementBdd:
     def create_table_videos(self):
         try:       
             logging.info("class ManagementBdd, methode: create_table_videos - Start")
-            var_cursor = self.cnx.cursor()
-            
+            var_cursor = self.cnx.cursor()            
 
             self.requete=f'CREATE TABLE IF NOT EXISTS videos (video_id INTEGER AUTO_INCREMENT PRIMARY KEY, titre VARCHAR(250) NOT NULL, author VARCHAR(250), lien TEXT NOT NULL, anne_video VARCHAR(4), description TEXT, categorie VARCHAR(200)) '
             #logging.info("create_table_videos, requete : "+self.requete)
-
 
             var_cursor.execute(self.requete)
             print('creation reussi!!!')
@@ -91,11 +89,13 @@ class ManagementBdd:
 
             logging.info (str(mon_cursor.rowcount) + " record inserted.\n")   
             logging.info("class ManagementBdd, methode: insert_donnes - End")
+            
+            return mon_cursor.rowcount
 
         except mysql.connector.Error as err:
             print("Something went wrong, un erreur se produit : {}".format(err))
             logging.error("Error - class ManagementBdd, methode: insert_donnes "+self.requete+ ' - '+err)
-
+            return 0
     
 
  
