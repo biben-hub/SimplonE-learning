@@ -14,12 +14,10 @@ class ManagementBdd:
         try:
             logging.info("class ManagementBdd, methode: init - Start")
             self.cnx = mysql.connector.connect(
-                host="cloudflix_host",
+                host="db_1",
                 user="root",
                 database="cloudflix_db",
-                password="cloudflix123",
-                use_unicode=True,
-                charset='utf8'
+                password="example",
             )
             print('connexion reussi')
             logging.info("connection reussi à la BDD")
