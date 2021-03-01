@@ -19,4 +19,4 @@ services:
       MYSQL_USER: adlane
     ports: 
       - "3000:4000"
-    command: ["./wait-for-it.sh" , "mysql:3306", "--timeout=8", "--", "python", "app.py"]
+    command: sh -c "./wait-for-it.sh mysql:3306 --timeout=20 -- python ./bdd_mysql/main.py && python app.py"

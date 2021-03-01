@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask import redirect, jsonify
 import mysql.connector
+import sys
 
 
 mybdd = mysql.connector.connect(
@@ -65,4 +66,5 @@ def api_video():
 
 
 if __name__ == '__main__':
+    print('hello', file=sys.stderr)
     app.run(host='0.0.0.0', port=4000, debug=True)

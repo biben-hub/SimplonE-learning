@@ -39,7 +39,7 @@ class ManagementBdd:
                 "class ManagementBdd, methode: create_database - Start")
             var_cursor = self.cnx.cursor()
 
-            self.requete = f'CREATE DATABASE IF NOT EXISTS e_learning'
+            self.requete = f'CREATE DATABASE IF NOT EXISTS cloudflix_db'
 
             #logging.info("create_database requete : "+self.requete)
             var_cursor.execute(self.requete)
