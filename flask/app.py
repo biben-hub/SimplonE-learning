@@ -4,12 +4,10 @@ import mysql.connector
 
 
 mybdd = mysql.connector.connect(
-    host="cloudflix_host",
+    host="db_1",
     user="root",
     database="cloudflix_db",
-    password="cloudflix123",
-    use_unicode=True,
-    charset='utf8'
+    password="example",
 )
 
 

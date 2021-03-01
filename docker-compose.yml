@@ -1,21 +1,22 @@
 version: "3"
 services: 
   db:
+    container_name: "db_1"
     image: mysql
     environment: 
-      - host="cloudflix_host",
-      - user="root",
-      - database="cloudflix_db",
-      - password="cloudflix123",
+      MYSQL_DATABASE: cloudflix_db
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_PASSWORD: example
+      MYSQL_USER: adlane
   flask:
     build: ./flask
     environment: 
-      - FLASK_ENV=development
-      - FLASK_RUN_PORT=4000
-      - host="cloudflix_host",
-      - user="root",
-      - database="cloudflix_db",
-      - password="cloudflix123",
+      FLASK_ENV: development
+      FLASK_RUN_PORT: 4000
+      MYSQL_DATABASE: cloudflix_db
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_PASSWORD: example
+      MYSQL_USER: adlane
     ports: 
       - "3000:4000"
-    command: python3 app.py
+    command: ["./wait-for-it.sh" , "mysql:3306", "--timeout=8", "--", "python", "app.py"]
