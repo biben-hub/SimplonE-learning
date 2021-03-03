@@ -44,7 +44,7 @@ def upload_video():
         cursor.execute('''INSERT INTO  videos
                         (titre, author, lien, anne_video, description, categorie) 
                         VALUES (%s, %s, %s, %s, %s, %s)''',
-                       (lien, categorie, titre, author, description, anne_video))
+                       (titre, author,lien ,anne_video, description,categorie ))
 
         mybdd.commit()
     return redirect('/')
